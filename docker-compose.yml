@@ -9,7 +9,7 @@ services:
       - ./.env
 
   proxy-service:
-    image: ghcr.io/KucukBalik/greeting_proxy/app:latest
+    image: ghcr.io/KucukBalik/greeting_proxy/app
     ports:
       - "8080:8080"
     networks:
