@@ -1,6 +1,6 @@
 services:
   greeting-service:
-    image: ghcr.io/kucukbalik/greetingservice/app:latest
+    image: ghcr.io/kucukbalik/lab7cicd/app
     ports:
       - "8081:8081"
     networks:
@@ -9,7 +9,7 @@ services:
       - ./.env
 
   proxy-service:
-    image: ghcr.io/kucukbalik/greeting-proxy/app
+    image: ghcr.io/kucukbalik/lab72cicdproxy/app
     ports:
       - "8080:8080"
     networks:
