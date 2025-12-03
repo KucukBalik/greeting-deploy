@@ -1,0 +1,23 @@
+services:
+  greeting-service:
+    image: ghcr.io/KucukBalik/greetingservice/app:latest
+    ports:
+      - "8081:8081"
+    networks:
+      - labnet
+    env_file:
+      - ./.env
+
+  proxy-service:
+    image: ghcr.io/KucukBalik/greeting_proxy/app:latest
+    ports:
+      - "8080:8080"
+    networks:
+      - labnet
+    depends_on:
+      - greeting-service
+    env_file:
+      - ./.env
+
+networks:
+  labnet:
